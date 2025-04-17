@@ -1,0 +1,6 @@
+.idea
+.env
+backup/local_backups/*
+backup/logs/*
+!backup/local_backups/.gitkeep
+!backup/logs/.gitkeep
