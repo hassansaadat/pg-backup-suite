@@ -1,6 +1,9 @@
 services:
   db-backup:
-    build: .
+    build:
+      context: .
+      args:
+        POSTGRES_VERSION: ${POSTGRES_VERSION}
     container_name: db-backup
     env_file: .env
     environment:
@@ -15,7 +18,10 @@ services:
       - backup
 
   pg-verify-db:
-    image: postgres:16-alpine
+    build:
+      context: .
+      args:
+        POSTGRES_VERSION: ${POSTGRES_VERSION}
     container_name: pg-verify-db
     hostname: pg-verify-db
     environment:
@@ -33,8 +39,10 @@ services:
       - default
 
   db-verify:
-    build: .
-    container_name: db-verify
+    build:
+      context: .
+      args:
+        POSTGRES_VERSION: ${POSTGRES_VERSION}
     env_file: .env
     environment:
       TZ: $TZ

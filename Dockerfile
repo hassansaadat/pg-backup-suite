@@ -1,4 +1,5 @@
-FROM postgres:16-alpine
+ARG POSTGRES_VERSION=17-alpine
+FROM postgres:${POSTGRES_VERSION}
 
 # Install required tools
 RUN apk update && \
