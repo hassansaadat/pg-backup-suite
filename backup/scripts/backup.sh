@@ -31,7 +31,7 @@ log() {
 log "🔄 Starting backup for $DB_NAME"
 
 # Backup
-if pg_dump -h "$DB_HOST" -U "$DB_USER" -p "$DB_PORT" -d "$DB_NAME" > "$TMP_SQL"; then
+if pg_dump -h "$DB_HOST" -U "$DB_USER" -p "$DB_PORT" -d "$DB_NAME" --no-owner --no-acl > "$TMP_SQL"; then
   log "📄 Dump created successfully"
 else
   log "❌ Failed to dump database"

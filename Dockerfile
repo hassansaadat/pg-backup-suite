@@ -18,4 +18,9 @@ RUN curl -O https://dl.min.io/client/mc/release/linux-amd64/mc && \
 # Set working directory
 WORKDIR /app
 
-RUN mkdir -p /app/logs /app/local_backups
+COPY backup/scripts /app/scripts
+
+RUN chmod +x /app/scripts/*.sh
+
+RUN mkdir -p /app/logs /app/local_backups && \
+    chown -R 1000:1000 /app/logs /app/local_backups

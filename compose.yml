@@ -4,7 +4,6 @@ services:
     container_name: db-backup
     env_file: .env
     volumes:
-      - ./backup/scripts:/app/scripts
       - ./backup/logs:/app/logs
       - ./backup/local_backups:/app/local_backups
     entrypoint: ["/app/scripts/backup_cron.sh"]
@@ -37,7 +36,6 @@ services:
     volumes:
       - ./backup/logs:/app/logs
       - ./backup/local_backups:/app/local_backups
-      - ./backup/scripts:/app/scripts
     entrypoint: ["/app/scripts/verify_cron.sh"]
     restart: on-failure
     depends_on:
