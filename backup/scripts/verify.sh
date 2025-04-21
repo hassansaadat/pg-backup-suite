@@ -42,6 +42,8 @@ while true; do
     continue
   fi
 
+  log "📦 Restoring backup file: $LATEST_BACKUP"
+
   TMP_GZ="$TMP_DIR/${db_name}-latest.sql.gz"
   TMP_SQL="$TMP_DIR/${db_name}-latest.sql"
 
