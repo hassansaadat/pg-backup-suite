@@ -25,8 +25,17 @@ while true; do
     var_name="DB${i}_NAME"
     db_name="${!var_name}"
 
+    skip_var="DB${i}_SKIP_VERIFY"
+    skip_verify="${!skip_var}"
+
     if [ -z "$db_name" ]; then
         break
+    fi
+
+    if [ "$skip_verify" == "true" ]; then
+      log "Skipping verification for database: $db_name"
+      i=$((i + 1))
+      continue
     fi
 
   LOG_FILE="/app/logs/verify.log"

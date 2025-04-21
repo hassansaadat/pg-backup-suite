@@ -43,6 +43,7 @@ services:
       context: .
       args:
         POSTGRES_VERSION: ${POSTGRES_VERSION}
+    container_name: db-verify
     env_file: .env
     environment:
       TZ: $TZ
