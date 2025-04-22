@@ -1,5 +1,7 @@
 # Postgres Secure Automated Backup Solution
 
+![Architecture Diagram](./docs/architecture.png)
+
 This repository provides a solution for automating PostgreSQL database backups and their verification. The solution allows you to:
 
 - Automatically back up PostgreSQL databases.
@@ -12,7 +14,7 @@ This repository provides a solution for automating PostgreSQL database backups a
 
 Before using this system, ensure the following:
 
-### 1. Docker
+### 1. Make sure [Docker](https://docs.docker.com/engine/install/) installed.
 
 ### 2. Create a Backup User in PostgreSQL
 
